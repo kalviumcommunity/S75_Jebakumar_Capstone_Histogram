@@ -1,7 +1,5 @@
 # S75_Jebakumar_Capstone_Histogram
 
-# S75_Jebakumar_Capstone_Histogram
-
 # Histogram
 
 *Uncover the untold stories etched into every map marker*
