@@ -13,17 +13,17 @@ app.use(express.json());
 import userRoutes from './routes/user.routes.js';
 import placeRoutes from './routes/place.routes.js';
 import storyRoutes from './routes/story.routes.js';
-import savedPlaceRoutes from './routes/savedPlace.routes.js';
+import savedRoutes from './routes/saved.routes.js';
 
 app.use('/api/users', userRoutes);
 app.use('/api/places', placeRoutes);
 app.use('/api/stories', storyRoutes);
-app.use('/api/saved-places', savedPlaceRoutes);
+app.use('/api/saved-places', savedRoutes);
 
 connectDB();
 
 app.get("/", (req, res) => {
-  res.send("Histogram backend running 🚀");
+  res.send("Histogram backend running");
 });
 
 app.listen(PORT, () => {
