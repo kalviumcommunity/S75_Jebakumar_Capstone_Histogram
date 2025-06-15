@@ -9,3 +9,16 @@ export const getAllUsers = async (req, res) => {
     res.status(500).json({ message: 'Failed to fetch users' });
   }
 };
+
+export const createUser = async (req, res) => {
+  try {
+    const { username, email, hashedPassword } = req.body;
+    const newUser = new User({ username, email, hashedPassword });
+    await newUser.save();
+    res.status(201).json(newUser);
+  } catch (err) {
+    console.error('Error creating user:', err);
+    res.status(500).json({ message: 'Failed to create user' });
+  }
+};
+
