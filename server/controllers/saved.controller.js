@@ -1,4 +1,4 @@
-import SavedPlace from '../models/savedPlace.model.js';
+import SavedPlace from '../models/saved.model.js';
 
 export const getAllSavedPlaces = async (req, res) => {
   try {
