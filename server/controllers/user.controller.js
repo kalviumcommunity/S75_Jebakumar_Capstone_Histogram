@@ -22,3 +22,14 @@ export const createUser = async (req, res) => {
   }
 };
 
+export const updateUser = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const updatedUser = await User.findByIdAndUpdate(id, req.body, { new: true });
+    res.status(200).json(updatedUser);
+  } catch (err) {
+    res.status(500).json({ message: 'Failed to update user' });
+  }
+};
+
+
