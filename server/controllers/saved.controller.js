@@ -32,3 +32,14 @@ export const updateSavedPlace = async (req, res) => {
   }
 };
 
+export const getSavedPlacesByUser = async (req, res) => {
+  try {
+    const { userId } = req.params;
+    const savedPlaces = await SavedPlace.find({ user: userId });
+    res.status(200).json(savedPlaces);
+  } catch (err) {
+    res.status(500).json({ message: 'Failed to fetch saved places' });
+  }
+};
+
+
