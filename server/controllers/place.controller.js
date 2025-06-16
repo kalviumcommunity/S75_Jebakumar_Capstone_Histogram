@@ -28,3 +28,14 @@ export const createPlace = async (req, res) => {
   }
 };
 
+export const updatePlace = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const updatedPlace = await Place.findByIdAndUpdate(id, req.body, { new: true });
+    res.status(200).json(updatedPlace);
+  } catch (err) {
+    res.status(500).json({ message: 'Failed to update place' });
+  }
+};
+
+
