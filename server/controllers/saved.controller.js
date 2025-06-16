@@ -42,4 +42,13 @@ export const getSavedPlacesByUser = async (req, res) => {
   }
 };
 
+export const getSavedPlacesWithDetails = async (req, res) => {
+  try {
+    const saved = await SavedPlace.find().populate('user').populate('place');
+    res.status(200).json(saved);
+  } catch (err) {
+    res.status(500).json({ message: 'Failed to fetch saved places with details' });
+  }
+};
+
 

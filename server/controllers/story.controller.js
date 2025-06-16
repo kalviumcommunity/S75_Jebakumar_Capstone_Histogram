@@ -48,5 +48,14 @@ export const getStoriesByUser = async (req, res) => {
   }
 };
 
+export const getStoriesWithDetails = async (req, res) => {
+  try {
+    const stories = await Story.find().populate('user').populate('place');
+    res.status(200).json(stories);
+  } catch (err) {
+    res.status(500).json({ message: 'Failed to fetch stories with details' });
+  }
+};
+
 
 
