@@ -21,3 +21,14 @@ export const createSavedPlace = async (req, res) => {
     res.status(500).json({ message: 'Failed to save place' });
   }
 };
+
+export const updateSavedPlace = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const updated = await SavedPlace.findByIdAndUpdate(id, req.body, { new: true });
+    res.status(200).json(updated);
+  } catch (err) {
+    res.status(500).json({ message: 'Failed to update saved place' });
+  }
+};
+
