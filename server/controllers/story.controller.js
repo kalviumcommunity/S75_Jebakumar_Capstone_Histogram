@@ -38,4 +38,15 @@ export const updateStory = async (req, res) => {
   }
 };
 
+export const getStoriesByUser = async (req, res) => {
+  try {
+    const { userId } = req.params;
+    const stories = await Story.find({ user: userId });
+    res.status(200).json(stories);
+  } catch (err) {
+    res.status(500).json({ message: 'Failed to fetch user stories' });
+  }
+};
+
+
 
