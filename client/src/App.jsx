@@ -1,35 +1,53 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+  function App() {
+    return (
+      <div className="min-h-screen bg-linear-to-br from-blue-50 to-indigo-100">
+        <div className="container mx-auto px-4 py-16">
+          {/* Hero Section */}
+          <div className="text-center mb-12">
+            <h1 className="text-5xl font-bold text-gray-900 mb-4">
+              Histogram
+            </h1>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              Uncover the untold stories etched into every map marker
+            </p>
+          </div>
 
-function App() {
-  const [count, setCount] = useState(0)
+          {/* Feature Cards */}
+          <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            <div className="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow">
+              <div className="text-4xl mb-4">🗺️</div>
+              <h3 className="text-xl font-semibold mb-2">Explore Maps</h3>
+              <p className="text-gray-600">
+                Navigate global locations and discover hidden stories
+              </p>
+            </div>
 
-  return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+            <div className="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow">
+              <div className="text-4xl mb-4">✍️</div>
+              <h3 className="text-xl font-semibold mb-2">Share Stories</h3>
+              <p className="text-gray-600">
+                Contribute your memories and experiences
+              </p>
+            </div>
+
+            <div className="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow">
+              <div className="text-4xl mb-4">📌</div>
+              <h3 className="text-xl font-semibold mb-2">Save Places</h3>
+              <p className="text-gray-600">
+                Bookmark meaningful locations for later
+              </p>
+            </div>
+          </div>
+
+          {/* CTA Button */}
+          <div className="text-center mt-12">
+            <button className="btn-primary text-lg px-8 py-3">
+              Start Exploring
+            </button>
+          </div>
+        </div>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    )
+  }
 
-export default App
+  export default App
