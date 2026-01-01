@@ -1,6 +1,20 @@
-  function App() {
-    return (
-      <div className="min-h-screen bg-linear-to-br from-blue-50 to-indigo-100">
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import MapPage from "./pages/MapPage";
+
+function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/map" element={<MapPage />} />
+      </Routes>
+    </BrowserRouter>
+  );
+}
+
+function HomePage() {
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
         <div className="container mx-auto px-4 py-16">
           {/* Hero Section */}
           <div className="text-center mb-12">
@@ -41,13 +55,13 @@
 
           {/* CTA Button */}
           <div className="text-center mt-12">
-            <button className="btn-primary text-lg px-8 py-3">
+            <Link to="/map" className="inline-block bg-indigo-600 text-white px-6 py-3 rounded-full text-lg font-medium hover:bg-indigo-700 transition-colors">
               Start Exploring
-            </button>
+            </Link>
           </div>
         </div>
       </div>
-    )
-  }
+    );
+}
 
-  export default App
+export default App;

@@ -12,8 +12,10 @@
   "dependencies": {
     "@tailwindcss/postcss": "^4.1.16",
     "@tailwindcss/vite": "^4.1.16",
+    "maplibre-gl": "^5.15.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
+    "react-router-dom": "^6.28.0",
     "tailwindcss": "^4.1.16"
   },
   "devDependencies": {
